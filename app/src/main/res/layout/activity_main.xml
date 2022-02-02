@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+<androidx.appcompat.widget.Toolbar
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:id="@+id/toobar"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Home Page"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20dp"/>
+        <ImageView
+            android:id="@+id/cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:src="@drawable/ic_baseline_shopping_cart_24"
+            android:tint="@color/black"
+            />
+
+    </LinearLayout>
+
+</androidx.appcompat.widget.Toolbar>
+<com.smarteist.autoimageslider.SliderView
+    android:layout_width="match_parent"
+    android:layout_below="@id/toobar"
+    android:layout_height="300dp"
+    android:id="@+id/image_slider"
+    app:sliderAnimationDuration="600"
+    app:sliderAutoCycleDirection="right"
+    app:sliderAutoCycleEnabled="true"
+    app:sliderIndicatorAnimationDuration="600"
+    app:sliderIndicatorGravity="center_horizontal|bottom"
+    app:sliderIndicatorMargin="15dp"
+    app:sliderIndicatorOrientation="horizontal"
+    app:sliderIndicatorPadding="3dp"
+    app:sliderIndicatorRadius="2dp"
+    app:sliderIndicatorSelectedColor="#5A5A5A"
+    app:sliderIndicatorUnselectedColor="#fff"
+    app:sliderScrollTimeInSec="2"
+    app:sliderStartAutoCycle="true"/>
+
+    <ListView
+        android:layout_below="@id/image_slider"
+        android:layout_width="match_parent"
+        android:id="@+id/listView"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/listitem"/>
+
+</RelativeLayout>
